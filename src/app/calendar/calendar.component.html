@@ -1,0 +1,11 @@
+<div class="top-wrapper">
+  <app-button-add-event (openDialog)="openDialog()"></app-button-add-event>
+  <app-date-selector [currentDate]="currentDate" (emitDate)="handleDateOutput($event)"></app-date-selector>
+</div>
+<app-calendar-structure
+  class="app-calendar"
+  [weekDays]="weekDays"
+  [schedules]="schedules"
+  (dropItem)="drop($event)"
+  (deleteItem)="deleteAppointment($event)"
+></app-calendar-structure>

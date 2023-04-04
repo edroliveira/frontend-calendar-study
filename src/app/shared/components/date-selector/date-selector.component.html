@@ -1,0 +1,8 @@
+<form [formGroup]="dateForm" class="datepicker-wrapper">
+    <mat-form-field appearance="outline" >
+        <mat-label> Select a Date </mat-label>
+        <input matInput [matDatepicker]="picker" (dateChange)="valueChanged()" formControlName="date"/>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+</form>

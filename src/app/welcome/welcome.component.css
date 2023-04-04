@@ -1,0 +1,25 @@
+.global-wrapper {
+    width: 100%;
+    padding-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    padding: 30px 20px;
+    border: 1px solid antiquewhite;
+    border-radius: 10px;
+}
+
+.header {
+    margin-bottom: 30px;
+}
+
+.header span {
+    font-size: 30px;
+}
+
+.btn-wrapper {
+    display: flex;
+    justify-content: center;
+}

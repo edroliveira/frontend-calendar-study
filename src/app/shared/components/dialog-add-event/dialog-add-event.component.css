@@ -1,0 +1,7 @@
+.form {
+    display: grid;
+}
+
+.form-field {
+    min-width: 100%;
+}

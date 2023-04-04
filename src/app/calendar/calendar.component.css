@@ -1,0 +1,10 @@
+.top-wrapper {
+    display: flex;
+    margin-left: 20px;
+}
+
+.app-calendar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}

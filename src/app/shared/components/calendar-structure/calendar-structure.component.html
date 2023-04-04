@@ -1,0 +1,25 @@
+<div class="schedules-wrapper">
+    <div class="schedule" *ngFor="let schedule of schedules">
+        <span> {{ schedule.description }} </span>
+    </div>
+</div>
+<div class="content-wrapper">
+    <div class="weekday-description">
+        <div class="weekday-item" *ngFor="let weekDay of weekDays">
+            <span> {{ weekDay.description }}, {{ weekDay.date | date: 'd' }} </span>
+        </div>
+    </div>
+    <div class="calendar-wrapper" cdkDropListGroup >
+        <mat-grid-list class="grid-list" cols="1" rowHeight="100px" *ngFor="let weekDay of weekDays">
+            <mat-grid-tile *ngFor="let schedule of weekDay.schedules" class="grid-tile">
+                <div cdkDropList [cdkDropListData]="schedule.appointments" class="drop-list"
+                    (cdkDropListDropped)="emitDropEvent($event)">
+                    <div class="drop-box" *ngFor="let appointment of schedule.appointments; let i = index" cdkDrag>
+                        {{ appointment.title }}
+                        <mat-icon class="icon-delete" matTooltip="Delete" (click)="emitDeleteAppointment(i, schedule)">delete</mat-icon>
+                    </div>
+                </div>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+</div>
